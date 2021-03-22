@@ -11,6 +11,7 @@ const ResultItem = (props) => {
                     <h5 className="card-title">{props.title}</h5>
                     <p className="card-text" >{props.description}</p>
                     <p style={{ fontStyle: "italic" }}>Author(s): {props.authors}</p>
+                    <a href={props.link} target="_blank" rel="noopener noreferrer" className="btn btn-primary" >View Book</a>
                 </div>
             </div>
         </div>
