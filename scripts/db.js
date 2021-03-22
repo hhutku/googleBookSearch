@@ -21,8 +21,12 @@ const saveBook = async ()=> {
  const book=await db.GoogleBooks.create(books);
  console.log(book) 
  
-
 }
-
-saveBook();
+// saveBook();
+const findAll = async()=>{
+ const books=await db.GoogleBooks.find({})
+ console.log(books)
+   
+}
+findAll();
 
