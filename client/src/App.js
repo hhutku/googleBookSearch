@@ -4,6 +4,7 @@ import Home from "./pages/Home";
 import Saved from "./pages/Saved";
 import NotFound from "./pages/NotFound";
 import GoogleState from "./context/google/GoogleState";
+import ShelfState from "./context/shelf/ShelfState";
 import Nav from "./components/Nav/Nav"
 import Jumbotron from "./components/Jumbotron/Jumbotron"
 import { Container } from 'react-bootstrap'
@@ -12,20 +13,22 @@ import { Container } from 'react-bootstrap'
 function App() {
   return (
     <GoogleState>
-      <Router>
-        <Nav />
-        <Container fluid>
-          <Jumbotron />
-          <div>
-            <Switch>
-              <Route exact path="/" component={Home} />
-              <Route exact path="/saved" component={Saved} />
-              <Route component={NotFound} />
-            </Switch>
-          </div>
+      <ShelfState>
+        <Router>
+          <Nav />
+          <Container fluid>
+            <Jumbotron />
+            <div>
+              <Switch>
+                <Route exact path="/" component={Home} />
+                <Route exact path="/saved" component={Saved} />
+                <Route component={NotFound} />
+              </Switch>
+            </div>
 
-        </Container>
-      </Router>
+          </Container>
+        </Router>
+      </ShelfState>
     </GoogleState>
   );
 }
