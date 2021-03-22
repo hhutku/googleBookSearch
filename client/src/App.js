@@ -5,6 +5,8 @@ import Saved from "./pages/Saved";
 import NotFound from "./pages/NotFound";
 import GoogleState from "./context/google/GoogleState";
 import Nav from "./components/Nav/Nav"
+import Jumbotron from "./components/Jumbotron/Jumbotron"
+import { Container } from 'react-bootstrap'
 
 
 function App() {
@@ -12,6 +14,8 @@ function App() {
     <GoogleState>
     <Router>
       <Nav/>
+      <Container fluid>
+      <Jumbotron />
     <div>
       <Switch>
         <Route exact path="/" component={Home} />
@@ -19,6 +23,8 @@ function App() {
         <Route component={NotFound} />
       </Switch>
     </div>
+
+    </Container>
     </Router>
     </GoogleState>
   );
