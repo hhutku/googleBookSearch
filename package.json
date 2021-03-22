@@ -24,6 +24,8 @@
     "express": "^4.16.3",
     "fix-path": "^3.0.0",
     "if-env": "^1.0.4",
+    "mongoose": "^5.12.1",
+    "path": "^0.12.7",
     "react-bootstrap": "^1.5.2",
     "react-dom": "^17.0.1",
     "react-router-dom": "^5.2.0"
