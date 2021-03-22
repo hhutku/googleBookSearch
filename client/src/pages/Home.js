@@ -1,5 +1,8 @@
 import React, { useState, useContext } from 'react';
-import GoogleContext from "../context/google/googleContext"
+import GoogleContext from "../context/google/googleContext";
+import { Form } from 'react-bootstrap';
+import Result from "../components/Result/Result"
+
 
 
 const Home = () => {
@@ -19,19 +22,21 @@ const Home = () => {
     return (
         <div>
             <form onSubmit={onSubmit} >
-                <input
-                    type='text'
-                    name='text'
-                    placeholder='Search Books...'
-                    value={text}
-                    onChange={onChange}
-                />
-                <input
-                    type='submit'
-                    value='Search'
-                    
-                />
+                <Form.Group>
+                    <input
+                        type='text'
+                        name='text'
+                        placeholder='Search Books...'
+                        value={text}
+                        onChange={onChange}
+                    />
+                    <input
+                        type='submit'
+                        value='Search'
+                    />
+                </Form.Group>
             </form>
+            <Result />
         </div>
     )
 }

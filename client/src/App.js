@@ -12,20 +12,20 @@ import { Container } from 'react-bootstrap'
 function App() {
   return (
     <GoogleState>
-    <Router>
-      <Nav/>
-      <Container fluid>
-      <Jumbotron />
-    <div>
-      <Switch>
-        <Route exact path="/" component={Home} />
-        <Route exact path="/saved" component={Saved} />
-        <Route component={NotFound} />
-      </Switch>
-    </div>
+      <Router>
+        <Nav />
+        <Container fluid>
+          <Jumbotron />
+          <div>
+            <Switch>
+              <Route exact path="/" component={Home} />
+              <Route exact path="/saved" component={Saved} />
+              <Route component={NotFound} />
+            </Switch>
+          </div>
 
-    </Container>
-    </Router>
+        </Container>
+      </Router>
     </GoogleState>
   );
 }
