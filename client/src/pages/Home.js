@@ -1,20 +1,37 @@
-import React,{useEffect} from 'react';
-import API from "../utils/API"
+import React, { useState, useContext } from 'react';
+import GoogleContext from "../context/google/googleContext"
+
 
 const Home = () => {
-const bookName="seattle"
-    useEffect(()=>{
 
-   API.getGoogleBooks(bookName)
-   .then((res)=>{
-       console.log(res.data)
-   })
-    },[])
+    const googleContext = useContext(GoogleContext);
+    const [text, setText] = useState('');
+    console.log(text)
+    console.log(googleContext.books)
+    const onSubmit = e => {
+        e.preventDefault();
+        googleContext.searchBooks(text);
+        setText('');
 
+    };
 
+    const onChange = e => setText(e.target.value);
     return (
         <div>
-            home
+            <form onSubmit={onSubmit} >
+                <input
+                    type='text'
+                    name='text'
+                    placeholder='Search Books...'
+                    value={text}
+                    onChange={onChange}
+                />
+                <input
+                    type='submit'
+                    value='Search'
+                    
+                />
+            </form>
         </div>
     )
 }
