@@ -7,10 +7,10 @@ const ResultItem = (props) => {
             <div className="card">
                 <div className="card-header"></div>
                 <div className="card-body">
-                    <img src={props.image}  alt="book"/>
+                    <img src={props.image} style={{ maxWidth: "100px" }} alt="book" />
                     <h5 className="card-title">{props.title}</h5>
                     <p className="card-text" >{props.description}</p>
-                    <p style={{fontStyle: "italic"}}>Author(s): {props.authors}</p>                                                  
+                    <p style={{ fontStyle: "italic" }}>Author(s): {props.authors}</p>
                 </div>
             </div>
         </div>
