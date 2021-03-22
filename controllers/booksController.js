@@ -18,6 +18,13 @@ module.exports = {
         .findOne({_id: req.params.id})
         .then(book => res.json(book))
         .catch(err => res.status(422).json(err));
+    },
+    remove: function(req, res) {
+      db.GoogleBooks
+        .findById({ _id: req.params.id })
+        .then(book => book.remove())
+        .then(book => res.json(book))
+        .catch(err => res.status(422).json(err));
     }
 
   };
