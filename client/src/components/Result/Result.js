@@ -13,6 +13,7 @@ const Result = () => {
             title={book.volumeInfo.title}                
             image={book.volumeInfo.imageLinks.thumbnail }
             description={book.volumeInfo.description}
+            authors={book.volumeInfo.authors && book.volumeInfo.authors.length > 1 ? book.volumeInfo.authors.join(",") : book.volumeInfo.authors}
              />
         )
     )
