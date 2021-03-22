@@ -12,6 +12,12 @@ module.exports = {
         .find({})  
         .then(books => res.json(books))
         .catch(err => res.status(422).json(err));
+    },
+    findOne: function(req, res) {
+      db.GoogleBooks
+        .findOne({_id: req.params.id})
+        .then(book => res.json(book))
+        .catch(err => res.status(422).json(err));
     }
 
   };
