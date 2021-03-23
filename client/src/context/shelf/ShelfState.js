@@ -19,7 +19,7 @@ const ShelfState = props => {
 
     dispatch({
       type: ADD_BOOK,
-      payload: res.data.items
+      payload: res.data
     });
   };
 

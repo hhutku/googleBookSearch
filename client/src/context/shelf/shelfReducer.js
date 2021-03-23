@@ -1,11 +1,12 @@
-import { ADD_BOOK, ALL_BOOKS,REMOVE_BOOKS } from '../types';
+import { ADD_BOOK, ALL_BOOKS,REMOVE_BOOK } from '../types';
 
 export default (state, action) => {
     switch (action.type) {
         case ADD_BOOK:
             return {
                 ...state,
-                books: action.payload,
+                books: [action.payload,...state.books]
+              
             };
 
         case ALL_BOOKS:
@@ -13,13 +14,11 @@ export default (state, action) => {
                 ...state,
                 books: action.payload,
             };
-        case REMOVE_BOOKS:
+        case REMOVE_BOOK:
             return {
                 ...state,
                 books: action.payload,
             };
-
-
 
     }
 };
