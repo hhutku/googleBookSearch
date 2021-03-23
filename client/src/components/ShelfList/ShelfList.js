@@ -10,7 +10,14 @@ const ShelfList= ()=>  {
         console.log(id)
         shelfContext.removeBookFromShelf(id)
     }
+
+
+    if (!booksInShelf.length>0) {
+        return ( <h1>You have no books in the bookshelf!</h1>);
+    } else {
+            
         return (
+          
             booksInShelf.map((book) => (
             <ShelfListItem 
             key={book._id}
@@ -21,14 +28,18 @@ const ShelfList= ()=>  {
             image={book.image ? book.image : "https://previews.123rf.com/images/pavelstasevich/pavelstasevich1811/pavelstasevich181101065/112815953-no-image-available-icon-flat-vector.jpg"}
             description={book.description}
             removeBook={removeBook}
-           
-            />
-        ))
+             />
+        )      
+        
+        )
+
+
+
         )
                            
     }
 
-
+}
 export default ShelfList
 
 

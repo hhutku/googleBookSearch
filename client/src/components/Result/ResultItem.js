@@ -1,15 +1,16 @@
 
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import ShelfContext from "../../context/shelf/shelfContext";
 
 const ResultItem = (props) => {
 
     const shelfContext = useContext(ShelfContext);
-
+    const [buttonState, setButtonState] = useState(false)
 
     function addToShelf() {
         shelfContext.addBook(props)
         console.log(shelfContext.books)
+        setButtonState(true)
     }
 
 
@@ -24,7 +25,7 @@ const ResultItem = (props) => {
                     <p className="card-text" >{props.description}</p>
                     <p style={{ fontStyle: "italic" }}>Author(s): {props.authors}</p>
                     <a href={props.link} target="_blank" rel="noopener noreferrer" className="btn btn-primary" >View Book</a>
-                    <button onClick={() => { addToShelf() }} className="btn" style={{ marginLeft: "6px" }}>Add  </button>
+                    <button onClick={() => { addToShelf() }} className={buttonState ? "btn btn-success" : "btn btn-info"} style={{ marginLeft: "6px" }}>{buttonState ? "Added" : "Add"}</button>
                 </div>
             </div>
         </div>
