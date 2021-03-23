@@ -14,20 +14,30 @@ const ShelfState = props => {
   const [state, dispatch] = useReducer(ShelfReducer, initialState);
 
   const addBook = async newBook => {
-
     const res = await API.addBook(newBook);
-
     dispatch({
       type: ADD_BOOK,
       payload: res.data
     });
   };
 
+  // const [state, dispatch] = useReducer(ShelfReducer, initialState);
+
+  const getAllBooks = async () => {
+    const res = await API.getAllBooks();
+    dispatch({
+      type: ALL_BOOKS,
+      payload: res.data
+    });
+  }
+
+
   
   return (
     <ShelfContext.Provider
       value={{
         addBook,
+        getAllBooks,
         books :state.books
 
       }}

@@ -6,13 +6,12 @@ export default (state, action) => {
             return {
                 ...state,
                 books: [action.payload,...state.books]
-              
-            };
+              };
 
         case ALL_BOOKS:
             return {
                 ...state,
-                books: action.payload,
+                books: action.payload
             };
         case REMOVE_BOOK:
             return {

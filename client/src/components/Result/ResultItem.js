@@ -4,15 +4,13 @@ import ShelfContext from "../../context/shelf/shelfContext";
 
 const ResultItem = (props) => {
 
-
     const shelfContext = useContext(ShelfContext);
 
 
-function addToShelf() {
-   
-    shelfContext.addBook(props)
-    console.log(shelfContext.books)
-}
+    function addToShelf() {
+        shelfContext.addBook(props)
+        console.log(shelfContext.books)
+    }
 
 
     return (
@@ -26,7 +24,7 @@ function addToShelf() {
                     <p className="card-text" >{props.description}</p>
                     <p style={{ fontStyle: "italic" }}>Author(s): {props.authors}</p>
                     <a href={props.link} target="_blank" rel="noopener noreferrer" className="btn btn-primary" >View Book</a>
-                    <button onClick={()=>{addToShelf()}} className="btn" style={{marginLeft: "6px"}}>Add  </button>
+                    <button onClick={() => { addToShelf() }} className="btn" style={{ marginLeft: "6px" }}>Add  </button>
                 </div>
             </div>
         </div>
