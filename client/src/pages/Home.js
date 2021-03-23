@@ -10,9 +10,12 @@ const Home = () => {
 
     const googleContext = useContext(GoogleContext);
     const shelfContext = useContext(ShelfContext);
+
     const [text, setText] = useState('');
+
     console.log(text)
     console.log(googleContext.books)
+    
     const onSubmit = e => {
         e.preventDefault();
         googleContext.searchBooks(text);
@@ -29,6 +32,7 @@ const Home = () => {
 
 
     const onChange = e => setText(e.target.value);
+
     return (
         <div>
             <form onSubmit={onSubmit} >

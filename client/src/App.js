@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Home from "./pages/Home";
-import Saved from "./pages/Saved";
+import Shelf from "./pages/Shelf";
 import NotFound from "./pages/NotFound";
 import GoogleState from "./context/google/GoogleState";
 import ShelfState from "./context/shelf/ShelfState";
@@ -21,7 +21,7 @@ function App() {
             <div>
               <Switch>
                 <Route exact path="/" component={Home} />
-                <Route exact path="/saved" component={Saved} />
+                <Route exact path="/saved" component={Shelf} />
                 <Route component={NotFound} />
               </Switch>
             </div>
