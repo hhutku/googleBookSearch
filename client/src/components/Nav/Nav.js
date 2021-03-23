@@ -20,7 +20,7 @@ function Nav() {
                             <Link className="nav-link" to="/">Home<span className="sr-only">(current)</span></Link>
                         </li>
                         <li className="nav-item ">
-                            <Link className="nav-link" to="/saved">Saved</Link>
+                            <Link className="nav-link" to="/saved">Bookshelf</Link>
                         </li>
                     </ul>
                 </div>
