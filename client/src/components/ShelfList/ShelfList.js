@@ -1,4 +1,4 @@
-import React, { useContext,useEffect } from 'react';
+import React, { useContext } from 'react';
 import ShelfListItem from "./ShelfListItem";
 import ShelfContext from "../../context/shelf/shelfContext";
 
