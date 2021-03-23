@@ -1,14 +1,14 @@
 import React, { useReducer } from 'react';
 import ShelfContext from './shelfContext';
 import ShelfReducer from './shelfReducer';
-import { ADD_BOOK, ALL_BOOKS,REMOVE_BOOKS } from '../types';
+import { ADD_BOOK, ALL_BOOKS, REMOVE_BOOK } from '../types';
 import API from "../../utils/API"
 
 
 const ShelfState = props => {
   const initialState = {
     books: []
-  
+
   };
 
   const [state, dispatch] = useReducer(ShelfReducer, initialState);
@@ -21,24 +21,29 @@ const ShelfState = props => {
     });
   };
 
-  // const [state, dispatch] = useReducer(ShelfReducer, initialState);
-
   const getAllBooks = async () => {
     const res = await API.getAllBooks();
     dispatch({
       type: ALL_BOOKS,
       payload: res.data
     });
-  }
+  };
 
+  const removeBookFromShelf = async (id) => {
+     await API.removeBook(id);
+    dispatch({
+      type: REMOVE_BOOK,
+      payload: id
+    });
+  };
 
-  
   return (
     <ShelfContext.Provider
       value={{
         addBook,
         getAllBooks,
-        books :state.books
+        removeBookFromShelf,
+        books: state.books
 
       }}
     >

@@ -16,8 +16,10 @@ export default (state, action) => {
         case REMOVE_BOOK:
             return {
                 ...state,
-                books: action.payload,
+                books: state.books.filter(book=> book._id!==action.payload),
             };
 
     }
 };
+
+
