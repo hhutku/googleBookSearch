@@ -1,6 +1,5 @@
-import React, { useState, useContext,useEffect } from 'react';
+import React, { useState, useContext} from 'react';
 import GoogleContext from "../context/google/googleContext";
-import ShelfContext from "../context/shelf/shelfContext";
 import { Form } from 'react-bootstrap';
 import Result from "../components/Result/Result"
 
@@ -9,7 +8,7 @@ import Result from "../components/Result/Result"
 const Home = () => {
 
     const googleContext = useContext(GoogleContext);
-    const shelfContext = useContext(ShelfContext);
+  
 
     const [text, setText] = useState('');
 
@@ -22,14 +21,6 @@ const Home = () => {
         setText('');
 
     };
-
-    useEffect(()=>{
-    shelfContext.getAllBooks()
-
-    },[])
-
-
-
 
     const onChange = e => setText(e.target.value);
 
