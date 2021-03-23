@@ -1,11 +1,9 @@
 import React from 'react';
 
 function ShelfListItem(props) {
-    const {title, authors, image, link, description} = props
+    const {title, authors, image, link, description,removeBook,id} = props
 
-const removeBook=()=>{
-    console.log("remove----")
-}
+
 
     return (
         <div>
@@ -17,7 +15,7 @@ const removeBook=()=>{
                     <p className="card-text" >{description}</p>
                     <p style={{fontStyle: "italic"}}>Author(s): {authors}</p>
                     <a href={link} target="_blank" rel="noopener noreferrer" className="btn" style={{marginRight: "6px", backgroundColor: "rgb(33, 150, 243)", color: "white"}}>View Book</a>
-                    <button onClick={removeBook} className="btn btn-primary">Delete</button>
+                    <button onClick={()=>removeBook(id)} className="btn btn-primary">Delete</button>
                 </div>
             </div>
         </div>
