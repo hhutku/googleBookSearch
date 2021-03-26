@@ -1,16 +1,22 @@
-import React, { useState, useContext} from 'react';
+import React, { useState, useContext,useEffect} from 'react';
 import GoogleContext from "../context/google/googleContext";
 import { Form } from 'react-bootstrap';
 import Result from "../components/Result/Result"
+import ShelfContext from "../context/shelf/shelfContext";
 
 
 
 const Home = () => {
-
-    const googleContext = useContext(GoogleContext);
-  
-
     const [text, setText] = useState('');
+    const googleContext = useContext(GoogleContext);
+    const shelfContext = useContext(ShelfContext);
+
+    useEffect(()=>{
+        shelfContext.getAllBooks()
+    
+        },[])
+
+   
 
     console.log(text)
     console.log(googleContext.books)

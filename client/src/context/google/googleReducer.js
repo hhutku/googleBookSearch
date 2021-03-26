@@ -8,6 +8,5 @@ export default (state, action) => {
         books: action.payload
       };
    
-      return state;
   }
 };
