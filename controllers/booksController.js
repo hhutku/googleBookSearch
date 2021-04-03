@@ -10,8 +10,6 @@ module.exports = {
      .create(req.body)
      .then(book => res.json(book))
      .catch(err => res.status(422).json(err))
- }else{
-   res.json({msg:"book already in shelf"})
  }
         
 
