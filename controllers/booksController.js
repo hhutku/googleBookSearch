@@ -3,7 +3,7 @@ const db = require("../models");
 module.exports = {
     save:async function (req, res) {
  
- const book=await   db.Book.find({id: req.body.id})
+ const book=await   db.Book.find({link: req.body.link})
 
  if(!book.length>0){
       db.Book
@@ -19,7 +19,8 @@ module.exports = {
     },
     findAll: function(req, res) {
       db.Book
-        .find({})  
+        .find({})
+        .sort({ _id: -1 })
         .then(books => res.json(books))
         .catch(err => res.status(422).json(err));
     },
