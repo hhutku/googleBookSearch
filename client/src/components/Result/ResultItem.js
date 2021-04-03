@@ -8,8 +8,10 @@ const ResultItem = (props) => {
     const [buttonState, setButtonState] = useState(false)
 
     function addToShelf() {
+        // console.log("------props")
+        // console.log(props)
         shelfContext.addBook(props)
-        console.log(shelfContext.books)
+        // console.log(shelfContext.books)
         setButtonState(true)
     }
 

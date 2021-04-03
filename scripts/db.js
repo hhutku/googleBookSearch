@@ -29,5 +29,11 @@ const findAll = async()=>{
  console.log(books)
    
 }
-findAll();
+// findAll();
 
+const findOne = async ()=>{
+  const book=await db.Book.find({id: "3cl1swEACAAJ"})
+  console.log(book)
+}
+
+findOne();

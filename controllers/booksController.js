@@ -1,11 +1,21 @@
 const db = require("../models");
 
 module.exports = {
-    save: function(req, res) {
+    save:async function (req, res) {
+ 
+ const book=await   db.Book.find({id: req.body.id})
+
+ if(!book.length>0){
       db.Book
-        .create(req.body)
-        .then(book => res.json(book))
-        .catch(err => res.status(422).json(err));
+     .create(req.body)
+     .then(book => res.json(book))
+     .catch(err => res.status(422).json(err))
+ }else{
+   res.json({msg:"book already in shelf"})
+ }
+        
+
+
     },
     findAll: function(req, res) {
       db.Book

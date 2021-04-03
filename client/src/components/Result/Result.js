@@ -10,6 +10,7 @@ const Result = () => {
         googleContext.books.map((book) => (
             <ResultItem 
             key={book.id}
+            id={book.id} 
             title={book.volumeInfo.title}  
             link={book.volumeInfo.previewLink}              
             image={book.volumeInfo.imageLinks ? book.volumeInfo.imageLinks.thumbnail : "https://previews.123rf.com/images/pavelstasevich/pavelstasevich1811/pavelstasevich181101065/112815953-no-image-available-icon-flat-vector.jpg"}
